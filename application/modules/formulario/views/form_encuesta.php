@@ -7,192 +7,306 @@
 	<!-- /.row -->
 	<div class="row">
 
-		<div class="col-lg-3">
-				
-			<div class="list-group">
-				<a href="https://jbb.gov.co" class="btn btn-success btn-block">
-					<i class="fa fa-home"></i> Inicio
-				</a>
-			</div>
+		<div class="col-lg-2">
+
 		</div>
 
-		<div class="col-lg-9">
+		<div class="col-lg-8">
             <div class="panel panel-success">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-lg-7">  
-                            <i class="fa fa-edit"></i> <strong>ENCUESTA DE PERSEPCIÓN Y SATISFACCIÓN </strong><br>
-                            ATENCIÓN A LA CIUDADANÍA
+                            <i class="fa fa-edit"></i> <strong>ENCUESTA DE PERCEPCIÓN Y SATISFACCIÓN </strong><br>
+                            ATENCIÓN A LA CIUDADANÍA<br>
+                            <small><strong>Código:</strong> DOC.PR.09.F.02 <strong>Versión 6</strong></small>
                         </div>
 
                     </div>
                 </div>
                 <div class="panel-body">
-                    <small>
-                        <p>
-                        Agradecemos de disponer de su tiempo, esta prueba tiene una duración de 30 minutos aproximadamente. A continuación se encuentran sus datos personales por favor verificarlos y actualizarlos si es necesario.
-                        </p>
-                        <p>
-                        Una vez actualice su información proceda a diligenciar el Cuentionario de habilidades Sociales y el Cuestionario de Aspectos de Interes.
-                        </p>
-                        <p class="text-danger text-left">Los campos con * son obligatorios.</p>
-                    </small>
+                    <p class="text-left"><strong>Rango de edad del encuestado:</strong></p>
+
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="desplazado" name="desplazado" value=1 onclick="valid_field()"> 18 a 26 años
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="rom" name="rom" value=1 onclick="valid_field()"> 27 a 59 años
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="raizal" name="raizal" value=1 onclick="valid_field()"> Mayor de 60 años
+                        </div>
+                    </div>
+                    <br><br>
+                    <p class="text-left"><strong>Población:</strong></p>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="checkbox" id="discapacidad" name="discapacidad" value=1 onclick="valid_field()"> Condición de discapacidad<br>                            
+                        </div>
+
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="desplazado" name="desplazado" value=1 onclick="valid_field()"> Desplazado<br>
+                            <input type="checkbox" id="conflicto" name="conflicto" value=1 onclick="valid_field()"> Víctima de conflicto armado
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="rom" name="rom" value=1 onclick="valid_field()"> Rom<br>
+                            <input type="checkbox" id="indigena" name="indigena" value=1 onclick="valid_field()"> Indígena
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="raizal" name="raizal" value=1 onclick="valid_field()"> Raizal<br>
+                            <input type="checkbox" id="ninguna" name="ninguna" value=1 onclick="valid_field()"> Ninguna
+                        </div>
+                    </div>
+
+                    <br><br><br><br>
+                    <p class="text-left"><strong>Género:</strong></p>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <input type="checkbox" id="desplazado" name="desplazado" value=1 onclick="valid_field()"> Hombre<br>
+                            <input type="checkbox" id="desplazado" name="desplazado" value=1 onclick="valid_field()"> Otro
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" id="rom" name="rom" value=1 onclick="valid_field()"> Mujer
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" id="raizal" name="raizal" value=1 onclick="valid_field()"> No responde
+                        </div>
+                    </div>
+
+                    <br><br><br>
+                    <p class="text-left"><strong>Nacionalidad:</strong></p>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <input type="checkbox" id="desplazado" name="desplazado" value=1 onclick="valid_field()"> Colombiano
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" id="desplazado" name="desplazado" value=1 onclick="valid_field()"> Extranjero
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+
+                    <br><br>
+                    <div class="col-sm-6">
+                        <p class="text-left"><strong>Localidad:</strong></p>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Localidad" required >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-left"><strong>Barrio:</strong></p>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="text" id="barrio" name="barrio" class="form-control" placeholder="Barrio" required >
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br><br>
+                    <div class="col-sm-12">
+                        <p class="text-left"><strong>¿Que servicio utilizó durante su visita?</strong></p>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Localidad" required >
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><br><br><br>
+                    <p class="text-left"><strong>¿Cómo se enteró de los servicios que ofrece el Jardín Botánico de Bogotá</strong></p>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="desplazado" name="desplazado" value=1 onclick="valid_field()"> Página Web<br>
+                            <input type="checkbox" id="conflicto" name="conflicto" value=1 onclick="valid_field()"> Volante/Plegable
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="rom" name="rom" value=1 onclick="valid_field()"> Televisión<br>
+                            <input type="checkbox" id="indigena" name="indigena" value=1 onclick="valid_field()"> Redes Sociales
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="raizal" name="raizal" value=1 onclick="valid_field()"> Amigo/Familiar<br>
+                            <input type="checkbox" id="ninguna" name="ninguna" value=1 onclick="valid_field()"> Correo electrónico
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="checkbox" id="raizal" name="raizal" value=1 onclick="valid_field()"> Prensa<br>
+                            <input type="checkbox" id="ninguna" name="ninguna" value=1 onclick="valid_field()"> Radio
+                        </div>
+                    </div>
+
+                    <br><br><br><br>
+                    <p class="text-left"><strong>Califique su grado de satisfacción en una escala de 1 a 5, siendo uno (1) Insatisfecho y cinco (5) totalmente satisfecho o N/A en caso de ser necesario:</strong></p>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <p class="text-center"><strong> Ítem</strong></p>
+                            </div>
+                            <div class="col-sm-1"><strong>1</strong></div>
+                            <div class="col-sm-1"><strong>2</strong></div>
+                            <div class="col-sm-1"><strong>3</strong></div>
+                            <div class="col-sm-1"><strong>4</strong></div>
+                            <div class="col-sm-1"><strong>5</strong></div>
+                            <div class="col-sm-2"><strong>No Sabe /<br> No responde</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                Profesionalismo y claridad de la información
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="1" id="1">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="1" id="2">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="1" id="3">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="1" id="4">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="1" id="5">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="radio" name="1" id="6">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                Amabilidad y actitud de servicio
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="1">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="2">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="3">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="4">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="5">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="radio" name="2" id="6">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                Orientación y guianza
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="1">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="2">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="3">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="4">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="5">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="radio" name="2" id="6">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                Estado de las colecciones de la entidad
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="1">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="2">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="3">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="4">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="5">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="radio" name="2" id="6">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                Estado de la infraestructura e instalaciones
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="1">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="2">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="3">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="4">
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="radio" name="2" id="5">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="radio" name="2" id="6">
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <p class="text-left">
+                        <strong>
+                            ¿Cuál es su prercepción frente al servicio? Por favor escríbalo aquí:
+                        </strong>
+                    </p>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <textarea id="observacion" name="observacion" placeholder="Observación" class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="col-sm-12">
+                        <p class="text-left"><strong>Nombre del Servidor Público que le atendió:</strong></p>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Localidad" required >
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+		</div>			
 
-
-
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <i class="fa fa-user"></i> <strong>INFORMACIÓN DEL CANDIDATO</strong>
-                </div>
-                <div class="panel-body">
-
-<?php
-    $retornoExito = $this->session->flashdata('retornoExito');
-    if ($retornoExito) {
-?>
-        <div class="alert alert-success ">
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-            <?php echo $retornoExito ?>     
-        </div>
-<?php
-    }
-    $retornoError = $this->session->flashdata('retornoError');
-    if ($retornoError) {
-?>
-        <div class="alert alert-danger ">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <?php echo $retornoError ?>
-        </div>
-<?php
-    }
-?> 
-                
-				<form  name="form" id="form" class="form-horizontal" method="post">
-				    <input type="hidden" id="hddIdCandidato" name="hddIdCandidato" value="<?php echo $information?$information[0]["id_candidato"]:""; ?>"/>
-
-                        <div class="form-group">
-                            <div class="col-sm-4">
-                                <label for="numero_inventario">Nombres: *</label>
-                                <input type="text" id="firstName" name="firstName" class="form-control" value="<?php echo $information?$information[0]["nombres"]:""; ?>" placeholder="Nombres" required >
-                            </div>
-
-                            <div class="col-sm-4">
-                                <label for="dependencia">Apellidos: *</label>
-                                <input type="text" id="lastName" name="lastName" class="form-control" value="<?php echo $information?$information[0]["apellidos"]:""; ?>" placeholder="Apellidos" required >
-                            </div>
-
-                            <div class="col-sm-4">
-                                <label for="dependencia">No. Identificación: *</label>
-                                <input type="text" id="numeroIdentificacion" name="numeroIdentificacion" class="form-control" value="<?php echo $information?$information[0]["numero_identificacion"]:""; ?>" placeholder="No. Identificación" disabled >
-                            </div>  
-                        </div>
-                                                
-                        <div class="form-group">
-                            <div class="col-sm-4">
-                                <label for="marca">Correo electrónico: *</label>
-                                <input type="text" class="form-control" id="email" name="email" value="<?php echo $information?$information[0]["correo"]:""; ?>" placeholder="Correo" />
-                            </div>
-                            
-                            <div class="col-sm-4">
-                                <label for="modelo">Número Celular: *</label>
-                                <input type="text" id="movilNumber" name="movilNumber" class="form-control" value="<?php echo $information?$information[0]["numero_celular"]:""; ?>" placeholder="Número Celular" required >
-                            </div>  
-
-                            <div class="col-sm-4">
-                                <label for="modelo">Edad: *</label>
-                                <select name="edad" id="edad" class="form-control">
-                                    <option value='' >Select...</option>
-                                    <?php
-                                    for ($i = 18; $i < 62; $i++) {
-                                        ?>
-                                        <option value='<?php echo $i; ?>' <?php
-                                        if ($information && $i == $information[0]["edad"]) {
-                                            echo 'selected="selected"';
-                                        }
-                                        ?>><?php echo $i; ?></option>
-                                            <?php } ?>                                  
-                                </select>
-                            </div> 
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-4">
-                                <label for="depto">Departamento: *</label>
-                                <select name="depto" id="depto" class="form-control" >
-                                    <option value=''>Seleccione...</option>
-                                    <?php for ($i = 0; $i < count($departamentos); $i++) { ?>
-                                        <option value="<?php echo $departamentos[$i]["dpto_divipola"]; ?>" <?php if($information && $information[0]["fk_dpto_divipola"] == $departamentos[$i]["dpto_divipola"]) { echo "selected"; }  ?>><?php echo strtoupper($departamentos[$i]["dpto_divipola_nombre"]); ?></option> 
-                                    <?php } ?>
-                                </select>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <label for="mcpio">Municipio: *</label>
-                                <select name="mcpio" id="mcpio" class="form-control" required>                  
-                                    <?php if($information){ ?>
-                                    <option value=''>Seleccione...</option>
-                                        <option value="<?php echo $information[0]["fk_mpio_divipola"]; ?>" selected><?php echo $information[0]["mpio_divipola_nombre"]; ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-4">
-                                <label for="numero_inventario">Último nivel académico alcanzado: *</label>
-                                <select name="nivelAcademico" id="nivelAcademico" class="form-control">
-                                    <option value="">Seleccione...</option>
-                                    <?php for ($i = 0; $i < count($nivelAcademico); $i++) { ?>
-                                        <option value="<?php echo $nivelAcademico[$i]["id_nivel_academico"]; ?>" <?php if($information && $information[0]["fk_id_nivel_academico"] == $nivelAcademico[$i]["id_nivel_academico"]) { echo "selected"; }  ?>><?php echo $nivelAcademico[$i]["nivel_academico"]; ?></option>    
-                                    <?php } ?>
-                                </select>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <label for="dependencia">Profesión: *</label>
-                                <input type="text" id="profesion" name="profesion" class="form-control" value="<?php echo $information?$information[0]["profesion"]:""; ?>" placeholder="Profesión" >
-                            </div>
-
-                        </div>
-
-						<div class="form-group">
-							<div class="row" align="center">
-								<div style="width:80%;" align="center">
-									<div id="div_load" style="display:none">		
-										<div class="progress progress-striped active">
-											<div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-												<span class="sr-only">45% completado</span>
-											</div>
-										</div>
-									</div>
-									<div id="div_error" style="display:none">			
-										<div class="alert alert-danger"><span class="glyphicon glyphicon-remove" id="span_msj">&nbsp;</span></div>
-									</div>
-								</div>
-							</div>
-						</div>	
-
-						<div class="form-group">
-							<div class="row" align="center">
-								<div style="width:100%;" align="center">							
-									<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
-										Guardar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
-									</button>
-								</div>
-							</div>
-						</div>
-
-					</form>
-
-                </div>
-            </div>
-		</div>
-		
-					
 	</div>
-	
 </div>
-<!-- /#page-wrapper -->
