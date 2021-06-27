@@ -2,7 +2,19 @@ $( document ).ready( function () {
 			
 	$( "#form" ).validate( {
 		rules: {
-
+			hdd_rango_edad: 		{ required: true },
+			hdd_poblacion: 		{ required: true },
+			poblacion_cual: 			{ minlength: 4, maxlength:40},
+			hdd_genero: 		{ required: true },
+			genero_otro: 			{ minlength: 4, maxlength:20},
+			hdd_nacionalidad: 		{ required: true },
+			localidad: 			{ minlength: 4, maxlength:50},
+			barrio: 			{ minlength: 4, maxlength:50},
+			servicio: 			{ required: true, minlength: 4, maxlength:100},
+			servicio_cual: 			{ minlength: 4, maxlength:100},
+			hdd_servicio: 		{ required: true },
+			nombre_servidor:    { minlength: 4, maxlength:20},
+			fecha: 		{ required: true }
 		},
 		errorElement: "em",
 		errorPlacement: function ( error, element ) {
@@ -57,7 +69,7 @@ $( document ).ready( function () {
 							$("#div_load").css("display", "none");
 							$('#btnSubmit').removeAttr('disabled');
 
-							var url = base_url + "formulario/habilidades/" + data.idFormulario;
+							var url = base_url + "formulario";
 							$(location).attr("href", url);
 						}
 						else

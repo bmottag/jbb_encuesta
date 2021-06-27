@@ -20,23 +20,18 @@ class Formulario extends CI_Controller {
 	}
 
 	/**
-	 * Save info del candidato
-     * @since 2/4/2021
+	 * Save formulario de satisfaccion
+     * @since 27/6/2021
      * @author BMOTTAG
 	 */
 	public function save_encuesta()
 	{
-
-
-pr($_POST); exit;
-
 			header('Content-Type: application/json');
 			$data = array();
 
-			$idCandidato= $this->input->post('hddIdCandidato');
-			$msj = "Se actualizarón sus datos, por favor continuar con los cuestionarios.";
+			$msj = "Se guardó la información de la encuesta!";
 
-			if ($idCandidato = $this->formulario_model->saveCandidato()) 
+			if ($this->formulario_model->saveEncuesta()) 
 			{
 				$data["result"] = true;
 				$this->session->set_flashdata('retornoExito', $msj);
