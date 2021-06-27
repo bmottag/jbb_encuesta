@@ -155,14 +155,14 @@ function valid_field_servicio()
                     <p>
                         Apreciado(a) ciudadano(a) su opinión es muy importante para el mejoramiento de nuestro servicio. Por favor diligencie el siguiente cuestionario sobre la atención recibida.
                     </p>
-                    <p class="text-danger text-left">Los campos con * son obligatorios.</p>
+                    <p class="text-danger text-left">Los campos con (*) son obligatorios.</p>
 
                     <p class="text-left"><strong>Rango de edad del encuestado: *</strong></p>
 
                     <form  name="form" id="form" class="form-horizontal" method="post">
                         <div class="form-group">
                             <div class="col-sm-3">
-                                <input type="radio" name="rango_edad" id="rango_edad1" value=1 onclick="valid_field_edad()">18 a 26 años 
+                                <input type="radio" name="rango_edad" id="rango_edad1" value=1 onclick="valid_field_edad()"> 18 a 26 años 
                                 <input type="hidden" id="hdd_rango_edad" name="hdd_rango_edad" />
                             </div>
                             <div class="col-sm-3">
@@ -255,7 +255,7 @@ function valid_field_servicio()
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <p class="text-left"><strong>¿Que servicio utilizó durante su visita? *</strong></p>
+                                <p class="text-left"><strong>¿Qué servicio utilizó durante su visita? *</strong></p>
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                         <input type="text" id="servicio" name="servicio" class="form-control" required >

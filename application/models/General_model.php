@@ -258,116 +258,24 @@ class General_model extends CI_Model {
 	}
 
 		/**
-		 * Consultar registros de procesos
-		 * @since 18/5/2021
+		 * Consulta listado de formularios
+		 * @since 27/6/2021
 		 */
-		public function get_procesos()
+		public function get_info_formularios($arrData)
 		{
 				$this->db->select();
-				$this->db->order_by('P.id_proceso', 'asc');
-
-				$query = $this->db->get('procesos P');
-
-				if ($query->num_rows() > 0) {
-					return $query->result_array();
-				} else {
-					return false;
+				if (array_key_exists('fecha', $arrData) && $arrData['fecha'] != '') {
+					$this->db->like('fecha', $arrData["fecha"]); 
 				}
-		}
+				if (array_key_exists('from', $arrData) && $arrData['from'] != '') {
+					$this->db->where('fecha >=', $arrData["from"]);
+				}				
+				if (array_key_exists('to', $arrData) && $arrData['to'] != '' && $arrData['from'] != '') {
+					$this->db->where('fecha <', $arrData["to"]);
+				}
+				$this->db->order_by('fecha', 'asc');
 
-		/**
-		 * Consultar registros de procesos
-		 * @since 19/5/2021
-		 */
-		public function get_procesos_info($arrData)
-		{
-				$this->db->select();
-				$this->db->join('procesos_informacion I', 'I.fk_id_proceso = P.id_proceso', 'INNER');
-				if (array_key_exists("idProceso", $arrData)) {
-					$this->db->where('P.id_proceso ', $arrData["idProceso"]);
-				}
-				if (array_key_exists("codigo", $arrData)) {
-					$this->db->where('I.codigo', $arrData["codigo"]);
-				}
-				if (array_key_exists("idProcesoInfo", $arrData)) {
-					$this->db->where('I.id_proceso_informacion', $arrData["idProcesoInfo"]);
-				}
-				$this->db->order_by('P.id_proceso, I.codigo', 'asc');
-
-				$query = $this->db->get('procesos P');
-
-				if ($query->num_rows() > 0) {
-					return $query->result_array();
-				} else {
-					return false;
-				}
-		}
-
-		/**
-		 * Consultar registros de historial de procesos
-		 * @since 19/5/2021
-		 */
-		public function get_procesos_historial($arrData)
-		{
-				$this->db->select("A.*, CONCAT(first_name, ' ', last_name) name");
-				$this->db->join('usuarios U', 'U.id_user = A.fk_id_usuario_api ', 'INNER');
-				if (array_key_exists("idProcesoInfo", $arrData)) {
-					$this->db->where('A.fk_id_proceso_informacion_api', $arrData["idProcesoInfo"]);
-				}
-				$this->db->order_by('A.id_auditoria_proceso_informacion', 'desc');
-
-				$query = $this->db->get('auditoria_procesos_informacion A');
-
-				if ($query->num_rows() > 0) {
-					return $query->result_array();
-				} else {
-					return false;
-				}
-		}
-
-		/**
-		 * Consultar registros de temas
-		 * @since 18/5/2021
-		 */
-		public function get_temas($arrData)
-		{
-				$this->db->select();
-				if (array_key_exists("idTema", $arrData)) {
-					$this->db->where('T.id_tema', $arrData["idTema"]);
-				}
-				$this->db->order_by('T.id_tema', 'asc');
-
-				$query = $this->db->get('temas T');
-
-				if ($query->num_rows() > 0) {
-					return $query->result_array();
-				} else {
-					return false;
-				}
-		}
-
-		/**
-		 * Consultar ducumentos de proceso
-		 * @since 25/5/2021
-		 */
-		public function get_documentos_procesos($arrData)
-		{
-				$this->db->select();
-				if (array_key_exists("idDocumento", $arrData)) {
-					$this->db->where('D.id_procesos_documento', $arrData["idDocumento"]);
-				}
-				if (array_key_exists("idProcesoInfo", $arrData)) {
-					$this->db->where('D.fk_id_proceso_informacion', $arrData["idProcesoInfo"]);
-				}
-				if (array_key_exists("idTema", $arrData)) {
-					$this->db->where('D.fk_id_tema', $arrData["idTema"]);
-				}
-				if (array_key_exists("estado", $arrData)) {
-					$this->db->where('D.estado', $arrData["estado"]);
-				}
-				$this->db->order_by('D.orden', 'asc');
-
-				$query = $this->db->get('procesos_documentos D');
+				$query = $this->db->get('repuestas_formulario');
 
 				if ($query->num_rows() > 0) {
 					return $query->result_array();
@@ -377,27 +285,6 @@ class General_model extends CI_Model {
 		}
 
 
-		/**
-		 * Consultar registros de historial de documentos
-		 * @since 28/5/2021
-		 */
-		public function get_documentos_historial($arrData)
-		{
-				$this->db->select("A.*, CONCAT(first_name, ' ', last_name) name");
-				$this->db->join('usuarios U', 'U.id_user = A.fk_id_usuario', 'INNER');
-				if (array_key_exists("idDocumento", $arrData)) {
-					$this->db->where('A.fk_id_proceso_documento', $arrData["idDocumento"]);
-				}
-				$this->db->order_by('A.id_auditoria_documento', 'desc');
-
-				$query = $this->db->get('auditoria_documentos A');
-
-				if ($query->num_rows() > 0) {
-					return $query->result_array();
-				} else {
-					return false;
-				}
-		}
 
 
 
