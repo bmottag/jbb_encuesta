@@ -24,8 +24,12 @@ class Formulario extends CI_Controller {
      * @since 2/4/2021
      * @author BMOTTAG
 	 */
-	public function save_candidato()
+	public function save_encuesta()
 	{
+
+
+pr($_POST); exit;
+
 			header('Content-Type: application/json');
 			$data = array();
 
