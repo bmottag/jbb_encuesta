@@ -50,7 +50,7 @@
                                 <th>Rango edad</th>
                                 <th class='text-center'>Genero</th>
                                 <th>Localidad</th>
-                                <th>nombre_servidor</th>
+                                <th>Nombre servidor</th>
                             </tr>
                         </thead>
                         <tbody>                         
@@ -60,10 +60,39 @@
                                 echo '<tr>';
                                 echo '<td class="text-center">' . $i . '</td>';
                                 echo '<td>' . $lista['fecha'] . '</td>';
-                                echo '<td>' . $lista['rango_edad'] . '</td>';
-                                echo '<td class="text-center">' . $lista['genero'] . '</td>';
+                                echo "<td>";
+                                switch ($lista['rango_edad']) {
+                                    case 1:
+                                        echo 'Menor a 26 años ';
+                                        break;
+                                    case 2:
+                                        echo '27 a 59 años';
+                                        break;
+                                    case 2:
+                                        echo 'Mayor de 60 años';
+                                        break;
+                                }
+                                echo "</td>";
+                                echo '<td class="text-center">';
+                                switch ($lista['genero']) {
+                                    case 1:
+                                        echo 'Hombre';
+                                        break;
+                                    case 2:
+                                        echo 'Mujer';
+                                        break;
+                                    case 2:
+                                        echo 'No responde';
+                                        break;
+                                    case 2:
+                                        echo 'Otro <br>';
+                                        echo $lista['genero_otro']; 
+                                        break;
+
+                                }
+                                echo "</td>";
                                 echo '<td>' . $lista['localidad'] . '</td>';
-                                echo '<td class="text-center">' . $lista['nombre_servidor'] . '</td>';
+                                echo '<td>' . $lista['nombre_servidor'] . '</td>';
                                 echo '</tr>';
                                 $i++;
                             endforeach;
