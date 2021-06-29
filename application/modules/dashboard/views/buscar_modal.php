@@ -5,7 +5,7 @@
 </div>
 
 <div class="modal-body">
-	<form name="form" id="form" role="form" method="post" action="<?php echo base_url('dashboard/buscar_reservas'); ?>">
+	<form name="form" id="form" role="form" method="post" action="<?php echo base_url('dashboard/buscar_encuestas'); ?>">
 
 <script>
 	$( function() {

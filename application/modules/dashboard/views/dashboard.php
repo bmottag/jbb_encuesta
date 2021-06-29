@@ -1,6 +1,40 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<script>
+$(function(){ 
+    $(".btn-primary").click(function () {   
+            var oID = $(this).attr("id");
+            $.ajax ({
+                type: 'POST',
+                url: base_url + 'dashboard/cargarModalBuscar',
+                data: {'idLink': oID},
+                cache: false,
+                success: function (data) {
+                    $('#tablaDatos').html(data);
+                }
+            });
+    }); 
+});
+</script>
+
+<script>
+$(function(){ 
+    $(".btn-info").click(function () {   
+            var oID = $(this).attr("id");
+            $.ajax ({
+                type: 'POST',
+                url: base_url + 'dashboard/cargarModalBuscarRango',
+                data: {'idLink': oID},
+                cache: false,
+                success: function (data) {
+                    $('#formRango').html(data);
+                }
+            });
+    }); 
+});
+</script>
+
 <div id="page-wrapper">
     <div class="row"><br>
 		<div class="col-md-12">
@@ -33,7 +67,7 @@
                                 if($listaFormularios){ 
                             ?>
                                 <button type="submit" class="btn btn-violeta btn-xs" id="btnSubmit2" name="btnSubmit2" value="1" >
-                                    Descargar Listado XLS <span class="fa fa-file-excel-o" aria-hidden="true" />
+                                    Descargar Registros - XLS <span class="fa fa-file-excel-o" aria-hidden="true" />
                                 </button>
                             <?php
                                 }

@@ -22,7 +22,7 @@ class Reportes extends CI_Controller {
 			{
 				$data['fecha'] = $this->input->post('fecha');
 				$fechaEncabezado = 'Fecha: ' . ucfirst(strftime("%b %d, %G",strtotime($data['fecha'])));
-				$nombreArchivo = 'encuesta_satisfaccion' . $data['fecha'] . '.xls';
+				$nombreArchivo = 'encuesta_satisfaccion_' . $data['fecha'] . '.xls';
 
 				$arrParam = array(
 					'fecha' => $this->input->post('fecha')
@@ -32,7 +32,7 @@ class Reportes extends CI_Controller {
 				$data['to'] = $this->input->post('to');
 
 				$fechaEncabezado = 'Rango Fechas: ' . ucfirst(strftime("%b %d, %G",strtotime($data['from']))) . ' - ' . ucfirst(strftime("%b %d, %G",strtotime($data['to'])));
-				$nombreArchivo = 'listado_visitantes_' . $data['from'] . '-' . $data['to'] . '.xls';
+				$nombreArchivo = 'encuesta_satisfaccion_' . $data['from'] . '-' . $data['to'] . '.xls';
 
 				$from = formatear_fecha($data['from']);
 				//le sumo un dia al dia final para que ingrese ese dia en la consulta
