@@ -24,6 +24,22 @@
                         <div class="col-lg-4">
                         <i class="fa fa-list-ul"></i> <strong>LISTADO DE ENCUESTAS </strong> -  <?php echo ucfirst(strftime("%b %d, %G",strtotime(date('Y-m-d')))); ?>
                         </div>
+                        <div class="col-lg-2">
+                            <form  name="form_descarga" id="form_descarga" method="post" action="<?php echo base_url("reportes/generaReservaFechaXLS"); ?>" target="_blank">
+                                <input type="hidden" class="form-control" id="bandera" name="bandera" value=1 />
+                                <input type="hidden" class="form-control" id="fecha" name="fecha" value="<?php echo date('Y-m-d'); ?>" />
+
+                            <?php
+                                if($listaFormularios){ 
+                            ?>
+                                <button type="submit" class="btn btn-violeta btn-xs" id="btnSubmit2" name="btnSubmit2" value="1" >
+                                    Descargar Listado XLS <span class="fa fa-file-excel-o" aria-hidden="true" />
+                                </button>
+                            <?php
+                                }
+                            ?>
+                            </form>
+                        </div>
                     </div>
                        
                 </div>
@@ -68,7 +84,7 @@
                                     case 2:
                                         echo '27 a 59 años';
                                         break;
-                                    case 2:
+                                    case 3:
                                         echo 'Mayor de 60 años';
                                         break;
                                 }
@@ -81,14 +97,13 @@
                                     case 2:
                                         echo 'Mujer';
                                         break;
-                                    case 2:
+                                    case 3:
                                         echo 'No responde';
                                         break;
-                                    case 2:
+                                    case 4:
                                         echo 'Otro <br>';
                                         echo $lista['genero_otro']; 
                                         break;
-
                                 }
                                 echo "</td>";
                                 echo '<td>' . $lista['localidad'] . '</td>';
