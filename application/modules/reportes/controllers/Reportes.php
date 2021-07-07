@@ -99,7 +99,7 @@ class Reportes extends CI_Controller {
 
 			if($listaEncuestas){
 				foreach ($listaEncuestas as $lista):
-					
+						$rangoEdad = '';
 	                    switch ($lista['rango_edad']) {
 	                        case 1:
 	                            $rangoEdad = 'Menor a 26 años ';
@@ -140,7 +140,7 @@ class Reportes extends CI_Controller {
 	                    if($lista['poblacion_ninguna'] == 1){
 	                    	$ninguna = 'X';
 	                    }
-
+	                    $genero = '';
                         switch ($lista['genero']) {
                             case 1:
                             	$genero = 'Hombre';
