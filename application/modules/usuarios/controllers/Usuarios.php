@@ -38,7 +38,7 @@ class Usuarios extends CI_Controller {
 			$passwd = str_replace(array("<",">","[","]","*","^","-","'","="),"",$newPassword); 
 			$idUser = $this->input->post("hddId");
 			
-			$data['linkBack'] = "settings/procesos";
+			$data['linkBack'] = $this->session->userdata("dashboardURL");
 			$data['titulo'] = "<i class='fa fa-unlock fa-fw'></i> CAMBIAR CONTRASEÑA";
 			
 			if($newPassword == $confirm)
