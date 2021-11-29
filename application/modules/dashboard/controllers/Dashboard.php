@@ -129,5 +129,54 @@ class Dashboard extends CI_Controller {
 			$data["view"] ='lista_encuestas_fecha';
 			$this->load->view("layout_calendar2", $data);
 	}
+
+	/**
+	 * Administrador de la encuesta de percepcion
+	 */
+	public function admin_percepcion()
+	{				
+			$arrParam = array(
+				'fecha' => date('Y-m-d')
+			);			
+			$data['listaEncuestas'] = $this->general_model->get_info_enc_percepcion($arrParam);
+			$data['noEncuestasHOY'] = $data['listaEncuestas']?count($data['listaEncuestas']):0;
+
+			//calculo numero de visitantes para la semana presente
+			if (date('D')=='Mon'){
+			     $lunes = date('Y-m-d');
+			} else {
+			     $lunes = date('Y-m-d', strtotime('last Monday', time()));
+			}
+
+			$domingo = strtotime('next Sunday', time());
+ 			$domingo = date('Y-m-d', $domingo);
+ 			//le sumo un dia al dia final para que ingrese ese dia en la consulta
+			$domingo = date('Y-m-d',strtotime ( '+1 day ' , strtotime ($domingo)));
+
+			$arrParam = array(
+				'from' => $lunes,
+				'to' => $domingo
+			);
+			$data['listaEncuestasSEMANA'] = $this->general_model->get_info_enc_percepcion($arrParam);
+			$data['noEncuestasSEMANA'] = $data['listaEncuestasSEMANA']?count($data['listaEncuestasSEMANA']):0;
+
+			//calculo numero de visitantes para el MES presente
+			$month_start = strtotime('first day of this month', time());
+			$month_start = date('Y-m-d', $month_start);
+			$month_end = strtotime('last day of this month', time());
+			$month_end = date('Y-m-d', $month_end);
+ 			//le sumo un dia al dia final para que ingrese ese dia en la consulta
+			$month_end = date('Y-m-d',strtotime ( '+1 day ' , strtotime ($month_end)));
+
+			$arrParam = array(
+				'from' => $month_start,
+				'to' => $month_end
+			);
+			$data['listaEncuestasMES'] = $this->general_model->get_info_enc_percepcion($arrParam);
+			$data['noEncuestasMES'] = $data['listaEncuestasMES']?count($data['listaEncuestasMES']):0;
+
+			$data["view"] = "dashboard_percepcion";
+			$this->load->view("layout_calendar2", $data);
+	}
 	
 }

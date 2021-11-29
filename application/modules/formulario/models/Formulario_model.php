@@ -70,6 +70,40 @@
 				}
 		}
 
-		
+		/**
+		 * Guardar respuestas formulario encuesta persepcion
+		 * @since 29/11/2021
+		 */
+		public function saveEncuestaPercepcion() 
+		{				
+				$data = array(
+					'tratamiento_datos' => $this->input->post('autoriza'),
+					'fk_id_localidad' => $this->input->post('id_localidad'),
+					'estrato' => $this->input->post('estrato'),
+					'genero' => $this->input->post('genero'),
+					'fk_id_grupo_etnico' => $this->input->post('id_grupo_etnico'),
+					'fk_id_rango_edad' => $this->input->post('id_rango_edades'),
+					'pregunta_1' => $this->input->post('calificacion_1'),
+					'pregunta_2' => $this->input->post('calificacion_2'),
+					'pregunta_3' => $this->input->post('calificacion_3'),
+					'pregunta_4' => $this->input->post('calificacion_4'),
+					'pregunta_5' => $this->input->post('calificacion_5'),
+					'pregunta_6' => $this->input->post('calificacion_6'),
+					'pregunta_7' => $this->input->post('calificacion_7'),
+					'pregunta_8' => $this->input->post('calificacion_8'),
+					'pregunta_9' => $this->input->post('calificacion_9'),
+					'pregunta_10' => $this->input->post('calificacion_10'),
+					'pregunta_11' => $this->input->post('calificacion_11'),
+					'pregunta_12' => $this->input->post('calificacion_12'),
+					'pregunta_13' => $this->input->post('calificacion_13'),
+					'fecha_registro' => date("Y-m-d"),
+				);	
+				$query = $this->db->insert('respuestas_encuesta_percepcion', $data);
+				if ($query) {
+					return true;
+				} else {
+					return false;
+				}
+		}
 	    
 	}
