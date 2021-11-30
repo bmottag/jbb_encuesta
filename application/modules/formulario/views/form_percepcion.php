@@ -52,7 +52,7 @@
                                 <div class="panel-body">
                                     <p class="text-left"><strong>¿Autoriza el tratamiento de datos personales?: * </strong><br>
                                     Para conocer nuestra 
-                                    <a href="https://www.jbb.gov.co/documentos/secretaria_general/2019/politica_datos_personales.pdf"><small>Política de Tratamiento de Datos consúltela aquí.</small></a></p>
+                                    <a href="https://www.jbb.gov.co/documentos/secretaria_general/2019/politica_datos_personales.pdf" target="_blank"><small>Política de Tratamiento de Datos consúltela aquí.</small></a></p>
                                     <div class="form-group">
                                         <div class="col-sm-2">
                                             <input type="radio" name="autoriza" id="autoriza1" value=1 onclick="valid_field_autoriza()"> Si

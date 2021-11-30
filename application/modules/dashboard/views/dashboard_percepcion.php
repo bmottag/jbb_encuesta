@@ -173,10 +173,6 @@ $(function(){
                     <!-- /.list-group -->
 
                     <div class="list-group">
-                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal" id="x">
-                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar Encuestas por Fecha
-                        </button>
-
                         <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#modalRango" id="y">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar Encuestas por Rango
                         </button>
@@ -188,16 +184,6 @@ $(function(){
     </div>
 
 </div>
-
-<!--INICIO Modal Buscar por fecha -->
-<div class="modal fade text-center" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">    
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" id="tablaDatos">
-
-        </div>
-    </div>
-</div>                       
-<!--FIN Modal Buscar por fecha -->
 
 <!--INICIO Modal Buscar por fecha -->
 <div class="modal fade text-center" id="modalRango" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">    
