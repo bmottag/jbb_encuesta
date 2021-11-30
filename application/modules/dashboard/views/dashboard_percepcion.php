@@ -3,28 +3,11 @@
 
 <script>
 $(function(){ 
-    $(".btn-primary").click(function () {   
-            var oID = $(this).attr("id");
-            $.ajax ({
-                type: 'POST',
-                url: base_url + 'dashboard/cargarModalBuscar',
-                data: {'idLink': oID},
-                cache: false,
-                success: function (data) {
-                    $('#tablaDatos').html(data);
-                }
-            });
-    }); 
-});
-</script>
-
-<script>
-$(function(){ 
     $(".btn-info").click(function () {   
             var oID = $(this).attr("id");
             $.ajax ({
                 type: 'POST',
-                url: base_url + 'dashboard/cargarModalBuscarRango',
+                url: base_url + 'dashboard/cargarModalPercepcionBuscarRango',
                 data: {'idLink': oID},
                 cache: false,
                 success: function (data) {

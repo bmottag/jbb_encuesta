@@ -178,5 +178,43 @@ class Dashboard extends CI_Controller {
 			$data["view"] = "dashboard_percepcion";
 			$this->load->view("layout_calendar2", $data);
 	}
+
+    /**
+     * Cargo modal - formulario buscar encuestas de percepcion por rango de fechas
+     * @since 30/11/2021
+     */
+    public function cargarModalPercepcionBuscarRango() 
+	{
+			header("Content-Type: text/plain; charset=utf-8"); //Para evitar problemas de acentos
+						
+			$this->load->view('buscar_enc_percepcion_rango_modal.php');
+    }
+	
+	/**
+	 * Lista de registrso de encuestas
+     * @since 30/11/2021
+     * @author BMOTTAG
+	 */
+	public function buscar_encu_percepcion_rango()
+	{		
+			//para identificar en la vista de donde viene
+			$data['bandera'] = FALSE;
+
+			$data['from'] = $this->input->post('from');
+			$data['to'] = $this->input->post('to');
+
+			$from = formatear_fecha($data['from']);
+			//le sumo un dia al dia final para que ingrese ese dia en la consulta
+			$to = date('Y-m-d',strtotime ( '+1 day ' , strtotime ( formatear_fecha($data['to']) ) ) );
+
+			$arrParam = array(
+				'from' => $from,
+				'to' => $to
+			);
+			$data['listaEncuestas'] = $this->general_model->get_info_enc_percepcion($arrParam);
+
+			$data["view"] ='lista_enc_percepcion_fecha';
+			$this->load->view("layout_calendar2", $data);
+	}
 	
 }
