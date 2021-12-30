@@ -530,6 +530,7 @@ class Reportes extends CI_Controller {
                                 break;
                         }
 
+                        $pregunta_2 = $lista['pregunta_2']==9?'X':$lista['pregunta_2'];
 
 						$objPHPExcel->getActiveSheet()->getStyle('A'.$j)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 						$objPHPExcel->getActiveSheet()->getStyle('E'.$j.':K'.$j)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
@@ -545,7 +546,7 @@ class Reportes extends CI_Controller {
 													  ->setCellValue('G'.$j, $lista['grupo_etnico'])
 													  ->setCellValue('H'.$j, $lista['rango_edades'])
 													  ->setCellValue('I'.$j, $lista['pregunta_1'])
-													  ->setCellValue('J'.$j, $lista['pregunta_2'])
+													  ->setCellValue('J'.$j, $pregunta_2)
 													  ->setCellValue('K'.$j, $lista['pregunta_3'])
 													  ->setCellValue('L'.$j, $lista['pregunta_4'])
 													  ->setCellValue('M'.$j, $pregunta_5)
@@ -565,25 +566,25 @@ class Reportes extends CI_Controller {
 			// Set column widths							  
 			$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(5);
 			$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(13);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(30);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(38);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(35);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(38);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(50);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(25);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(20);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(20);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(25);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(25);
 			$objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(35);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(35);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(30);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(15);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('M')->setWidth(20);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(50);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(35);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(30);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('M')->setWidth(40);
 			$objPHPExcel->getActiveSheet()->getColumnDimension('N')->setWidth(30);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('O')->setWidth(30);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('P')->setWidth(70);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('Q')->setWidth(17);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('O')->setWidth(40);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('P')->setWidth(35);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('Q')->setWidth(35);
 			$objPHPExcel->getActiveSheet()->getColumnDimension('R')->setWidth(20);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('S')->setWidth(17);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('T')->setWidth(18);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('U')->setWidth(18);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('S')->setWidth(35);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('T')->setWidth(25);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('U')->setWidth(45);
 
 			// Set fonts	
 			$objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);

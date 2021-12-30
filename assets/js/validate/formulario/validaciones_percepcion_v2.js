@@ -14,6 +14,13 @@ function valid_calificacion_1()
     }else{
         document.getElementById('hdd_calificacion_1').value = "";
     }
+
+    if(document.getElementById('calificacion_1_1').checked){
+        $("#div_grado_satisfaccion").css("display", "none");
+        document.getElementById('hdd_calificacion_1').value = 99;
+    }else{
+        $("#div_grado_satisfaccion").css("display", "inline");
+    }
 }
 
 function valid_calificacion_2() 

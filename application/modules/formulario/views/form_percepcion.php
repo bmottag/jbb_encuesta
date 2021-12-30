@@ -1,5 +1,5 @@
-<script type="text/javascript" src="<?php echo base_url("assets/js/validate/formulario/encuesta_percepcion.js"); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url("assets/js/validate/formulario/validaciones_percepcion.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("assets/js/validate/formulario/encuesta_percepcion_v2.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("assets/js/validate/formulario/validaciones_percepcion_v2.js"); ?>"></script>
 
 <div id="page-wrapper">
 	<br>
@@ -50,9 +50,9 @@
                         <div class="col-lg-12">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <p class="text-left"><strong>¿Autoriza el tratamiento de datos personales?: * </strong><br>
-                                    Para conocer nuestra 
-                                    <a href="https://www.jbb.gov.co/documentos/secretaria_general/2019/politica_datos_personales.pdf" target="_blank"><small>Política de Tratamiento de Datos consúltela aquí.</small></a></p>
+                                    <p class="text-left"><strong>¿Conforme a la Política de Tratamiento de Datos Personales del JBB, autoriza el tratamiento de datos personales?: * </strong><br>
+                                    Para conocer nuestra Política de Tratamiento de Datos
+                                    <a href="https://www.jbb.gov.co/documentos/secretaria_general/2019/politica_datos_personales.pdf" target="_blank"> consúltela aquí.</a></p>
                                     <div class="form-group">
                                         <div class="col-sm-2">
                                             <input type="radio" name="autoriza" id="autoriza1" value=1 onclick="valid_field_autoriza()"> Si
@@ -201,7 +201,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row" id="div_grado_satisfaccion">
                         <div class="col-lg-12">
                             <div class="panel panel-success">
                                 <div class="panel-heading">

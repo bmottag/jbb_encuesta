@@ -1,4 +1,13 @@
 $( document ).ready( function () {
+
+  jQuery.validator.addMethod("validarSatisfaccion", function(value, element, param) {
+  var hdd_calificacion_1 = $('#hdd_calificacion_1').val();
+  if(hdd_calificacion_1 != 99 && value == ""){
+    return false;
+  }else{
+    return true;
+  }
+}, "Este campo es requerido.");
 			
 	$( "#form" ).validate( {
 		rules: {
@@ -8,8 +17,8 @@ $( document ).ready( function () {
 			genero: 				{ required: true },
 			id_grupo_etnico: 		{ required: true },
 			id_rango_edades: 		{ required: true },
-			hdd_calificacion_1: 		{ required: true },
-			hdd_calificacion_2: 		{ required: true },
+			hdd_calificacion_1: 		{ required: true  },
+			hdd_calificacion_2: 		{ validarSatisfaccion: true  },
 			hdd_calificacion_3: 		{ required: true },
 			hdd_calificacion_4: 		{ required: true },
 			hdd_calificacion_5: 		{ required: true },

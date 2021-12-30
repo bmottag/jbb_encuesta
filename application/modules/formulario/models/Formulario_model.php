@@ -75,7 +75,11 @@
 		 * @since 29/11/2021
 		 */
 		public function saveEncuestaPercepcion() 
-		{				
+		{			
+				$calificacion_1 = $this->input->post('calificacion_1');
+				$calificacion_2 = $this->input->post('calificacion_2');
+				$calificacion_2 = $calificacion_1 == 1?9:$calificacion_2;
+
 				$data = array(
 					'tratamiento_datos' => $this->input->post('autoriza'),
 					'fk_id_localidad' => $this->input->post('id_localidad'),
@@ -84,7 +88,7 @@
 					'fk_id_grupo_etnico' => $this->input->post('id_grupo_etnico'),
 					'fk_id_rango_edad' => $this->input->post('id_rango_edades'),
 					'pregunta_1' => $this->input->post('calificacion_1'),
-					'pregunta_2' => $this->input->post('calificacion_2'),
+					'pregunta_2' => $calificacion_2,
 					'pregunta_3' => $this->input->post('calificacion_3'),
 					'pregunta_4' => $this->input->post('calificacion_4'),
 					'pregunta_5' => $this->input->post('calificacion_5'),
