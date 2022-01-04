@@ -107,7 +107,7 @@ class Reportes extends CI_Controller {
 	                        case 2:
 	                            $rangoEdad = '27 a 59 años';
 	                            break;
-	                        case 2:
+	                        case 3:
 	                            $rangoEdad = 'Mayor de 60 años';
 	                            break;
 	                    }
