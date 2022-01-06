@@ -55,8 +55,8 @@ $(function(){
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-lg-4">
-                        <i class="fa fa-list-ul"></i> <strong>LISTADO DE ENCUESTAS </strong> -  <?php echo ucfirst(strftime("%b %d, %G",strtotime(date('Y-m-d')))); ?>
+                        <div class="col-lg-6">
+                        <i class="fa fa-list-ul"></i> <strong>LISTADO DE ENCUESTAS DE SATISFACCIÓN </strong> -  <?php echo ucfirst(strftime("%b %d, %G",strtotime(date('Y-m-d')))); ?>
                         </div>
                         <div class="col-lg-2">
                             <form  name="form_descarga" id="form_descarga" method="post" action="<?php echo base_url("reportes/generaReservaFechaXLS"); ?>" target="_blank">
