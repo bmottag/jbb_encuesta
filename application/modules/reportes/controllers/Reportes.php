@@ -359,7 +359,7 @@ class Reportes extends CI_Controller {
 			$objPHPExcel->setActiveSheetIndex(0);
 			$objPHPExcel->getActiveSheet()->setCellValue('A1', 'REGISTROS ENCUESTA DE PERCEPCIÓN SOBRE LA GESTIÓN DEL JARDÍN BOTÁNICO DE BOGOTÁ JOSÉ CELESTINO MUTIS- ' . $fechaEncabezado);
 						
-			$objPHPExcel->getActiveSheet()->setCellValue('A3', 'ID')
+			$objPHPExcel->getActiveSheet()->setCellValue('A3', 'No.')
 										->setCellValue('B3', 'Fecha')
 										->setCellValue('C3', 'Autoriza el tratamiento de datos personales')
 										->setCellValue('D3', 'Localidad donde vive')
@@ -384,9 +384,10 @@ class Reportes extends CI_Controller {
 										
 			$j=4;
 			$total = 0; 
-
+			$x=0;
 			if($listaEncuestas){
 				foreach ($listaEncuestas as $lista):
+						$x++;
 						$tratamiento_datos = '';
 	                    switch ($lista['tratamiento_datos']) {
 	                        case 1:
@@ -471,7 +472,7 @@ class Reportes extends CI_Controller {
                             case 4:
                                 $pregunta_9 = 'Alto';
                                 break;
-                            case 4:
+                            case 5:
                                 $pregunta_9 = 'Muy alto';
                                 break;
                         }
@@ -489,7 +490,7 @@ class Reportes extends CI_Controller {
                             case 4:
                                 $pregunta_10 = 'Alto';
                                 break;
-                            case 4:
+                            case 5:
                                 $pregunta_10 = 'Muy alto';
                                 break;
                         }
@@ -507,7 +508,7 @@ class Reportes extends CI_Controller {
                             case 4:
                                 $pregunta_11 = 'Alto';
                                 break;
-                            case 4:
+                            case 5:
                                 $pregunta_11 = 'Muy alto';
                                 break;
                         }
@@ -525,7 +526,7 @@ class Reportes extends CI_Controller {
                             case 4:
                                 $pregunta_12 = 'Alto';
                                 break;
-                            case 4:
+                            case 5:
                                 $pregunta_12 = 'Muy alto';
                                 break;
                         }
@@ -537,7 +538,7 @@ class Reportes extends CI_Controller {
 						$objPHPExcel->getActiveSheet()->getStyle('Q'.$j.':X'.$j)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 						$objPHPExcel->getActiveSheet()->getStyle('Z'.$j.':AD'.$j)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
-						$objPHPExcel->getActiveSheet()->setCellValue('A'.$j, $lista['id_encuesta_percepcion'])
+						$objPHPExcel->getActiveSheet()->setCellValue('A'.$j, $x)
 													  ->setCellValue('B'.$j, $lista['fecha_registro'])
 													  ->setCellValue('C'.$j, $tratamiento_datos)
 													  ->setCellValue('D'.$j, $lista['localidad'])
@@ -582,9 +583,9 @@ class Reportes extends CI_Controller {
 			$objPHPExcel->getActiveSheet()->getColumnDimension('P')->setWidth(35);
 			$objPHPExcel->getActiveSheet()->getColumnDimension('Q')->setWidth(35);
 			$objPHPExcel->getActiveSheet()->getColumnDimension('R')->setWidth(20);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('S')->setWidth(35);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('S')->setWidth(45);
 			$objPHPExcel->getActiveSheet()->getColumnDimension('T')->setWidth(25);
-			$objPHPExcel->getActiveSheet()->getColumnDimension('U')->setWidth(45);
+			$objPHPExcel->getActiveSheet()->getColumnDimension('U')->setWidth(65);
 
 			// Set fonts	
 			$objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
